@@ -38,4 +38,18 @@ describe('TodoInput', () => {
         expect(button).not.toBeDisabled()
         expect(asFragment()).toMatchSnapshot()
     })
+
+    it('empties input valie when enabled button is clicked and disables button', () => {
+        const nextValue = 'test todo'
+        const { getByTestId, asFragment } = render(<TodoInput />)
+        const input = getByTestId(TEST_ID.todoInput)
+        const button = getByTestId(TEST_ID.todoInputButton)
+        fireEvent.change(input, { target: { value: nextValue } })
+        expect(input).toHaveValue(nextValue)
+        expect(button).not.toBeDisabled()
+        fireEvent.click(button)
+        expect(input).toHaveValue('')
+        expect(button).toBeDisabled()
+        expect(asFragment()).toMatchSnapshot()
+    })
 })

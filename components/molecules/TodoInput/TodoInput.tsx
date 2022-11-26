@@ -40,6 +40,9 @@ function TodoInput() {
                 testId={TEST_ID.todoInputButton}
                 text={TODO_INPUT_BUTTON_TEXT}
                 disabled={!value}
+                onClick={() => {
+                    setValue('')
+                }}
             />
         </div>
     )
