@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 import { Button } from 'components/atoms/Button'
 import { Input } from 'components/atoms/Input'
 import { Label } from 'components/atoms/Label'
@@ -11,6 +15,7 @@ import {
 } from './constants'
 
 function TodoInput() {
+    const [value, setValue] = useState('')
     return (
         <div className="flex gap-2 items-end">
             <div className="flex flex-col gap-2">
@@ -22,7 +27,10 @@ function TodoInput() {
                     />
                 </div>
                 <Input
-                    value=""
+                    onChange={(value) => {
+                        setValue(value)
+                    }}
+                    value={value}
                     placeholder={TODO_INPUT_PLACEHOLDER}
                     testId={TEST_ID.todoInput}
                     id={TODO_INPUT_ID}
@@ -31,7 +39,7 @@ function TodoInput() {
             <Button
                 testId={TEST_ID.todoInputButton}
                 text={TODO_INPUT_BUTTON_TEXT}
-                disabled
+                disabled={!value}
             />
         </div>
     )

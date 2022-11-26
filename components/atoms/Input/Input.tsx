@@ -1,6 +1,8 @@
+'use client'
+
 import { Props } from './types'
 
-function Input({ placeholder, testId, value, id }: Props) {
+function Input({ placeholder, testId, value, id, onChange }: Props) {
     return (
         <input
             id={id}
@@ -8,6 +10,9 @@ function Input({ placeholder, testId, value, id }: Props) {
             data-testid={testId}
             placeholder={placeholder}
             value={value}
+            onChange={(event) => {
+                onChange(event.target.value)
+            }}
         />
     )
 }

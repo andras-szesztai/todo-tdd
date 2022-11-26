@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 
 import { TEST_ID } from 'constants/testIds'
 
@@ -23,6 +23,19 @@ describe('TodoInput', () => {
         expect(button).toBeInTheDocument()
         expect(button.textContent).toBe(TODO_INPUT_BUTTON_TEXT)
         expect(button).toBeDisabled()
+        expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('renders input field that can be type into resulting in enabled submit button', () => {
+        const nextValue = 'test todo'
+        const { getByTestId, asFragment } = render(<TodoInput />)
+        const input = getByTestId(TEST_ID.todoInput)
+        const button = getByTestId(TEST_ID.todoInputButton)
+        expect(input).toHaveValue('')
+        expect(button).toBeDisabled()
+        fireEvent.change(input, { target: { value: nextValue } })
+        expect(input).toHaveValue(nextValue)
+        expect(button).not.toBeDisabled()
         expect(asFragment()).toMatchSnapshot()
     })
 })
