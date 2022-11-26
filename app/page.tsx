@@ -1,5 +1,3 @@
-import styles from './page.module.css'
-
 export default function Home() {
-    return <div className={styles.container}>Hello</div>
+    return <h1 className="text-3xl font-medium underline">Hello, Next.js!</h1>
 }
