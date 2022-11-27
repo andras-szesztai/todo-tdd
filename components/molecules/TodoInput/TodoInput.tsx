@@ -13,8 +13,9 @@ import {
     TODO_INPUT_PLACEHOLDER,
     TODO_INPUT_ID,
 } from './constants'
+import { Props } from './types'
 
-function TodoInput() {
+function TodoInput({ onSubmit }: Props) {
     const [value, setValue] = useState('')
     return (
         <div className="flex gap-2 items-end">
@@ -41,6 +42,7 @@ function TodoInput() {
                 text={TODO_INPUT_BUTTON_TEXT}
                 disabled={!value}
                 onClick={() => {
+                    onSubmit(value)
                     setValue('')
                 }}
             />

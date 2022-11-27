@@ -1,5 +1,5 @@
 import { Raleway } from '@next/font/google'
-import { TodoInput } from 'components/molecules/TodoInput'
+import { TodosView } from 'components/templates/TodosView'
 
 import { ReactNode } from 'react'
 
@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <head />
             <body className="w-screen h-screen">
                 <section className="w-full h-full flex justify-center items-center">
-                    <TodoInput />
+                    <TodosView />
                     {children}
                 </section>
             </body>

@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodosView displays submitted todos in todos list, todos with same name can be submitted 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col gap-4 -translate-y-12 text-primary-dark font-medium"
+    data-testid="todos-view-container"
+  >
+    <div
+      class="flex gap-2 items-end"
+    >
+      <div
+        class="flex flex-col gap-2"
+      >
+        <div
+          class="ml-1"
+        >
+          <label
+            class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
+            data-testid="todo-input-label"
+            for="todo-input"
+          >
+            Todo Title
+          </label>
+        </div>
+        <input
+          class="w-60 rounded-lg border font-medium border-primary-dark focus:outline-none focus:border-accent text-base p-2 placeholder-primary-dark-disabled text-primary-dark"
+          data-testid="todo-input"
+          id="todo-input"
+          placeholder="Enter a Todo title..."
+          value=""
+        />
+      </div>
+      <button
+        class="inline font-medium p-2 rounded-lg text-white bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent"
+        data-testid="todo-input-button"
+        disabled=""
+        type="button"
+      >
+        Submit
+      </button>
+    </div>
+    <ul
+      class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
+      data-testid="todo-list-container"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TodosView displays submitted todos in todos list, todos with same name can be submitted 2`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-col gap-4 -translate-y-12 text-primary-dark font-medium"
+    data-testid="todos-view-container"
+  >
+    <div
+      class="flex gap-2 items-end"
+    >
+      <div
+        class="flex flex-col gap-2"
+      >
+        <div
+          class="ml-1"
+        >
+          <label
+            class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
+            data-testid="todo-input-label"
+            for="todo-input"
+          >
+            Todo Title
+          </label>
+        </div>
+        <input
+          class="w-60 rounded-lg border font-medium border-primary-dark focus:outline-none focus:border-accent text-base p-2 placeholder-primary-dark-disabled text-primary-dark"
+          data-testid="todo-input"
+          id="todo-input"
+          placeholder="Enter a Todo title..."
+          value=""
+        />
+      </div>
+      <button
+        class="inline font-medium p-2 rounded-lg text-white bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent"
+        data-testid="todo-input-button"
+        disabled=""
+        type="button"
+      >
+        Submit
+      </button>
+    </div>
+    <ul
+      class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
+      data-testid="todo-list-container"
+    >
+      <li
+        class="border border-primary-dark rounded-lg p-2 bg-white truncate"
+        data-testid="todo-item"
+      >
+        My first todo
+      </li>
+      <li
+        class="border border-primary-dark rounded-lg p-2 bg-white truncate"
+        data-testid="todo-item"
+      >
+        My second todo
+      </li>
+      <li
+        class="border border-primary-dark rounded-lg p-2 bg-white truncate"
+        data-testid="todo-item"
+      >
+        My first todo
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

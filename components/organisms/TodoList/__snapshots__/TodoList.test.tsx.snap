@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList displays submitted todos in the ui as list items ordered by date created ascending 1`] = `
+<DocumentFragment>
+  <ul
+    class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
+    data-testid="todo-list-container"
+  >
+    <li
+      class="border border-primary-dark rounded-lg p-2 bg-white truncate"
+      data-testid="todo-item"
+    >
+      My Todo 1
+    </li>
+    <li
+      class="border border-primary-dark rounded-lg p-2 bg-white truncate"
+      data-testid="todo-item"
+    >
+      My Todo 2
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`TodoList renders without error 1`] = `
+<DocumentFragment>
+  <ul
+    class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
+    data-testid="todo-list-container"
+  />
+</DocumentFragment>
+`;

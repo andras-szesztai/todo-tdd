@@ -11,7 +11,9 @@ import {
 
 describe('TodoInput', () => {
     it('renders default state with correct label, without any value and with correct placeholder in input and submit button disabled', () => {
-        const { getByTestId, asFragment } = render(<TodoInput />)
+        const { getByTestId, asFragment } = render(
+            <TodoInput onSubmit={jest.fn} />
+        )
         const label = getByTestId(TEST_ID.todoInputLabel)
         expect(label).toBeInTheDocument()
         expect(label.textContent).toBe(TODO_INPUT_LABEL)
@@ -28,7 +30,9 @@ describe('TodoInput', () => {
 
     it('renders input field that can be type into resulting in enabled submit button', () => {
         const nextValue = 'test todo'
-        const { getByTestId, asFragment } = render(<TodoInput />)
+        const { getByTestId, asFragment } = render(
+            <TodoInput onSubmit={jest.fn} />
+        )
         const input = getByTestId(TEST_ID.todoInput)
         const button = getByTestId(TEST_ID.todoInputButton)
         expect(input).toHaveValue('')
@@ -39,15 +43,21 @@ describe('TodoInput', () => {
         expect(asFragment()).toMatchSnapshot()
     })
 
-    it('empties input valie when enabled button is clicked and disables button', () => {
+    it('fires onSubmit & empties input value when enabled button is clicked and disables button', () => {
         const nextValue = 'test todo'
-        const { getByTestId, asFragment } = render(<TodoInput />)
+        const mockOnSubmit = jest.fn()
+        const { getByTestId, asFragment } = render(
+            <TodoInput onSubmit={mockOnSubmit} />
+        )
         const input = getByTestId(TEST_ID.todoInput)
         const button = getByTestId(TEST_ID.todoInputButton)
         fireEvent.change(input, { target: { value: nextValue } })
+        expect(mockOnSubmit).toHaveBeenCalledTimes(0)
         expect(input).toHaveValue(nextValue)
         expect(button).not.toBeDisabled()
         fireEvent.click(button)
+        expect(mockOnSubmit).toHaveBeenCalledTimes(1)
+        expect(mockOnSubmit).toHaveBeenCalledWith(nextValue)
         expect(input).toHaveValue('')
         expect(button).toBeDisabled()
         expect(asFragment()).toMatchSnapshot()
