@@ -3,10 +3,21 @@
 exports[`TodoItem renders without error 1`] = `
 <DocumentFragment>
   <li
-    class="border border-primary-dark rounded-lg p-2 bg-white truncate"
+    class="relative border border-primary-dark rounded-lg p-2  truncate group bg-white border-primary-dark text-primary-dark"
     data-testid="todo-item"
   >
     My Todo
+    <span
+      class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+    >
+      <button
+        class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
+        data-testid="todo-complete-button"
+        type="button"
+      >
+        Complete
+      </button>
+    </span>
   </li>
 </DocumentFragment>
 `;

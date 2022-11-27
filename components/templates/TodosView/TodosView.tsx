@@ -7,9 +7,18 @@ import { TodoInput } from 'components/molecules/TodoInput'
 import { TTodoItem } from 'components/molecules/TodoItem'
 import { TodoList } from 'components/organisms/TodoList'
 import { TEST_ID } from 'constants/testIds'
+import { Props } from './types'
 
-function TodosView() {
-    const [todos, setTodos] = useState<TTodoItem[]>([])
+function TodosView({ initialTodoItems = [] }: Props) {
+    const [todos, setTodos] = useState<TTodoItem[]>(initialTodoItems)
+
+    const handleTodoItemCompleteClick = (id: string) => {
+        const nextTodos = [...todos]
+        const todoIndex = nextTodos.findIndex((todo) => todo.id === id)
+        nextTodos[todoIndex].isCompleted = !nextTodos[todoIndex].isCompleted
+        setTodos(nextTodos)
+    }
+
     return (
         <div
             data-testid={TEST_ID.todoViewContainer}
@@ -23,11 +32,15 @@ function TodosView() {
                             id: uuidv4(),
                             title: newTodo,
                             createdAt: new Date().toISOString(),
+                            isCompleted: false,
                         },
                     ])
                 }}
             />
-            <TodoList todoItems={todos} />
+            <TodoList
+                todoItems={todos}
+                onTodoItemCompleteClick={handleTodoItemCompleteClick}
+            />
         </div>
     )
 }

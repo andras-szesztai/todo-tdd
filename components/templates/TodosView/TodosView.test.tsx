@@ -1,4 +1,5 @@
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render, within } from '@testing-library/react'
+import { TODO_COMPLETE_BUTTON_TEXT } from 'components/molecules/TodoItem'
 import { TEST_ID } from 'constants/testIds'
 
 import TodosView from './TodosView'
@@ -41,5 +42,52 @@ describe('TodosView', () => {
         expect(todoItems[1]).toHaveTextContent(secondItem)
         expect(todoItems[2]).toHaveTextContent(firstItem)
         expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('allows user to complete and un-complete todos', () => {
+        const testTodoItems = [
+            {
+                id: '1',
+                title: 'My Todo 1',
+                createdAt: '2022-11-27T14:54:38.113Z',
+                isCompleted: false,
+            },
+            {
+                id: '2',
+                title: 'My Todo 2',
+                createdAt: '2022-11-28T14:54:38.113Z',
+                isCompleted: false,
+            },
+        ]
+        const { getAllByTestId } = render(
+            <TodosView initialTodoItems={testTodoItems} />
+        )
+        const todos = getAllByTestId(TEST_ID.todoItem)
+        const firstTodoCompleteButton = within(todos[0]).getByTestId(
+            TEST_ID.todoCompleteButton
+        )
+        const secondTodoCompleteButton = within(todos[1]).getByTestId(
+            TEST_ID.todoCompleteButton
+        )
+        expect(firstTodoCompleteButton).toHaveTextContent(
+            TODO_COMPLETE_BUTTON_TEXT.complete
+        )
+        expect(secondTodoCompleteButton).toHaveTextContent(
+            TODO_COMPLETE_BUTTON_TEXT.complete
+        )
+        fireEvent.click(firstTodoCompleteButton)
+        expect(firstTodoCompleteButton).toHaveTextContent(
+            TODO_COMPLETE_BUTTON_TEXT.unComplete
+        )
+        expect(secondTodoCompleteButton).toHaveTextContent(
+            TODO_COMPLETE_BUTTON_TEXT.complete
+        )
+        fireEvent.click(firstTodoCompleteButton)
+        expect(firstTodoCompleteButton).toHaveTextContent(
+            TODO_COMPLETE_BUTTON_TEXT.complete
+        )
+        expect(secondTodoCompleteButton).toHaveTextContent(
+            TODO_COMPLETE_BUTTON_TEXT.complete
+        )
     })
 })

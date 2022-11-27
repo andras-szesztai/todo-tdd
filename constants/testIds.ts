@@ -5,4 +5,5 @@ export const TEST_ID = {
     todoViewContainer: 'todos-view-container',
     todoListContainer: 'todo-list-container',
     todoItem: 'todo-item',
+    todoCompleteButton: 'todo-complete-button',
 }

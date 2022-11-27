@@ -28,7 +28,7 @@ exports[`TodoInput fires onSubmit & empties input value when enabled button is c
       />
     </div>
     <button
-      class="inline font-medium p-2 rounded-lg text-white bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent"
+      class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-base p-2 rounded-lg"
       data-testid="todo-input-button"
       disabled=""
       type="button"
@@ -67,7 +67,7 @@ exports[`TodoInput renders default state with correct label, without any value a
       />
     </div>
     <button
-      class="inline font-medium p-2 rounded-lg text-white bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent"
+      class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-base p-2 rounded-lg"
       data-testid="todo-input-button"
       disabled=""
       type="button"
@@ -106,7 +106,7 @@ exports[`TodoInput renders input field that can be type into resulting in enable
       />
     </div>
     <button
-      class="inline font-medium p-2 rounded-lg text-white bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent"
+      class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-base p-2 rounded-lg"
       data-testid="todo-input-button"
       type="button"
     >
