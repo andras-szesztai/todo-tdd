@@ -5,7 +5,6 @@ import classNames from 'classnames'
 import { Props } from './types'
 
 function Button({
-    testId,
     disabled,
     text,
     onClick,
@@ -24,7 +23,6 @@ function Button({
         <button
             className={cxs}
             type="button"
-            data-testid={testId}
             disabled={disabled}
             onClick={onClick}
             onFocus={onFocus}

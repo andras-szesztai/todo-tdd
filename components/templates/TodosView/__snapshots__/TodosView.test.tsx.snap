@@ -3,11 +3,11 @@
 exports[`TodosView displays submitted todos in todos list, todos with same name can be submitted 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col gap-4 -translate-y-12 text-primary-dark font-medium"
+    class="flex flex-col gap-4 font-medium -translate-y-12 text-primary-dark"
     data-testid="todos-view-container"
   >
     <div
-      class="flex gap-2 items-end"
+      class="flex items-end gap-2"
     >
       <div
         class="flex flex-col gap-2"
@@ -24,8 +24,7 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
           </label>
         </div>
         <input
-          class="w-60 rounded-lg border font-medium border-primary-dark focus:outline-none focus:border-accent text-base p-2 placeholder-primary-dark-disabled text-primary-dark"
-          data-testid="todo-input"
+          class="p-2 text-base font-medium border rounded-lg w-60 border-primary-dark focus:outline-none focus:border-accent placeholder-primary-dark-disabled text-primary-dark"
           id="todo-input"
           placeholder="Enter a Todo title..."
           value=""
@@ -33,7 +32,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       </div>
       <button
         class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-base p-2 rounded-lg"
-        data-testid="todo-input-button"
         disabled=""
         type="button"
       >
@@ -51,11 +49,11 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
 exports[`TodosView displays submitted todos in todos list, todos with same name can be submitted 2`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col gap-4 -translate-y-12 text-primary-dark font-medium"
+    class="flex flex-col gap-4 font-medium -translate-y-12 text-primary-dark"
     data-testid="todos-view-container"
   >
     <div
-      class="flex gap-2 items-end"
+      class="flex items-end gap-2"
     >
       <div
         class="flex flex-col gap-2"
@@ -72,8 +70,7 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
           </label>
         </div>
         <input
-          class="w-60 rounded-lg border font-medium border-primary-dark focus:outline-none focus:border-accent text-base p-2 placeholder-primary-dark-disabled text-primary-dark"
-          data-testid="todo-input"
+          class="p-2 text-base font-medium border rounded-lg w-60 border-primary-dark focus:outline-none focus:border-accent placeholder-primary-dark-disabled text-primary-dark"
           id="todo-input"
           placeholder="Enter a Todo title..."
           value=""
@@ -81,7 +78,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       </div>
       <button
         class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-base p-2 rounded-lg"
-        data-testid="todo-input-button"
         disabled=""
         type="button"
       >
@@ -102,7 +98,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
         >
           <button
             class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
-            data-testid="todo-complete-button"
             type="button"
           >
             Complete
@@ -119,7 +114,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
         >
           <button
             class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
-            data-testid="todo-complete-button"
             type="button"
           >
             Complete
@@ -136,7 +130,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
         >
           <button
             class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
-            data-testid="todo-complete-button"
             type="button"
           >
             Complete

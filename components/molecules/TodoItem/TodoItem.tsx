@@ -26,7 +26,6 @@ function TodoItem({ title, onCompleteClick, isCompleted }: Props) {
             {title}
             <span className={spanStyles}>
                 <Button
-                    testId={TEST_ID.todoCompleteButton}
                     text={
                         isCompleted
                             ? TODO_COMPLETE_BUTTON_TEXT.unComplete

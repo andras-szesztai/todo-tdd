@@ -29,9 +29,9 @@ describe('TodoItem', () => {
             />
         )
         const todoItem = getByTestId(TEST_ID.todoItem)
-        const completeTodoButton = within(todoItem).getByTestId(
-            TEST_ID.todoCompleteButton
-        )
+        const completeTodoButton = within(todoItem).getByRole('button', {
+            name: /Complete/i,
+        })
         expect(completeTodoButton.closest('span')).toHaveClass(
             'opacity-0 group-hover:opacity-100'
         )

@@ -16,7 +16,6 @@ exports[`TodoList displays submitted todos in the ui as list items ordered by da
       >
         <button
           class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
-          data-testid="todo-complete-button"
           type="button"
         >
           Complete
@@ -33,7 +32,6 @@ exports[`TodoList displays submitted todos in the ui as list items ordered by da
       >
         <button
           class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
-          data-testid="todo-complete-button"
           type="button"
         >
           Complete

@@ -18,7 +18,7 @@ import { Props } from './types'
 function TodoInput({ onSubmit }: Props) {
     const [value, setValue] = useState('')
     return (
-        <div className="flex gap-2 items-end">
+        <div className="flex items-end gap-2">
             <div className="flex flex-col gap-2">
                 <div className="ml-1">
                     <Label
@@ -33,12 +33,10 @@ function TodoInput({ onSubmit }: Props) {
                     }}
                     value={value}
                     placeholder={TODO_INPUT_PLACEHOLDER}
-                    testId={TEST_ID.todoInput}
                     id={TODO_INPUT_ID}
                 />
             </div>
             <Button
-                testId={TEST_ID.todoInputButton}
                 text={TODO_INPUT_BUTTON_TEXT}
                 disabled={!value}
                 onClick={() => {

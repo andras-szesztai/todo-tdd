@@ -67,9 +67,9 @@ describe('TodoList', () => {
         const selectedIndex = 0
         expect(mockOnTodoItemCompleteClick).not.toHaveBeenCalled()
         fireEvent.click(
-            within(todoItem[selectedIndex]).getByTestId(
-                TEST_ID.todoCompleteButton
-            )
+            within(todoItem[selectedIndex]).getByRole('button', {
+                name: /complete/i,
+            })
         )
         expect(mockOnTodoItemCompleteClick).toHaveBeenCalledTimes(1)
         expect(mockOnTodoItemCompleteClick).toHaveBeenCalledWith(

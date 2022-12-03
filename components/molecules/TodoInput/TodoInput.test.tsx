@@ -11,17 +11,17 @@ import {
 
 describe('TodoInput', () => {
     it('renders default state with correct label, without any value and with correct placeholder in input and submit button disabled', () => {
-        const { getByTestId, asFragment } = render(
+        const { getByTestId, getByRole, asFragment } = render(
             <TodoInput onSubmit={jest.fn} />
         )
         const label = getByTestId(TEST_ID.todoInputLabel)
         expect(label).toBeInTheDocument()
         expect(label.textContent).toBe(TODO_INPUT_LABEL)
-        const input = getByTestId(TEST_ID.todoInput)
+        const input = getByRole('textbox')
         expect(input).toBeInTheDocument()
         expect(input).toHaveAttribute('placeholder', TODO_INPUT_PLACEHOLDER)
         expect(input).not.toHaveFocus()
-        const button = getByTestId(TEST_ID.todoInputButton)
+        const button = getByRole('button', { name: /submit/i })
         expect(button).toBeInTheDocument()
         expect(button.textContent).toBe(TODO_INPUT_BUTTON_TEXT)
         expect(button).toBeDisabled()
@@ -30,11 +30,11 @@ describe('TodoInput', () => {
 
     it('renders input field that can be type into resulting in enabled submit button', () => {
         const nextValue = 'test todo'
-        const { getByTestId, asFragment } = render(
+        const { getByRole, asFragment } = render(
             <TodoInput onSubmit={jest.fn} />
         )
-        const input = getByTestId(TEST_ID.todoInput)
-        const button = getByTestId(TEST_ID.todoInputButton)
+        const input = getByRole('textbox')
+        const button = getByRole('button', { name: /submit/i })
         expect(input).toHaveValue('')
         expect(button).toBeDisabled()
         fireEvent.change(input, { target: { value: nextValue } })
@@ -46,11 +46,11 @@ describe('TodoInput', () => {
     it('fires onSubmit & empties input value when enabled button is clicked and disables button', () => {
         const nextValue = 'test todo'
         const mockOnSubmit = jest.fn()
-        const { getByTestId, asFragment } = render(
+        const { getByRole, asFragment } = render(
             <TodoInput onSubmit={mockOnSubmit} />
         )
-        const input = getByTestId(TEST_ID.todoInput)
-        const button = getByTestId(TEST_ID.todoInputButton)
+        const input = getByRole('textbox')
+        const button = getByRole('button', { name: /submit/i })
         fireEvent.change(input, { target: { value: nextValue } })
         expect(mockOnSubmit).toHaveBeenCalledTimes(0)
         expect(input).toHaveValue(nextValue)
