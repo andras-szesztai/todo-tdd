@@ -15,8 +15,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
             */}
             <head />
-            <body className="w-screen h-screen">
-                <section className="w-full h-full flex justify-center items-center">
+            <body className="flex items-center justify-center w-screen h-screen">
+                <section>
                     <TodosView />
                     {children}
                 </section>

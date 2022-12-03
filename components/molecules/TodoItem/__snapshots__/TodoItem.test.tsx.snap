@@ -4,7 +4,6 @@ exports[`TodoItem renders without error 1`] = `
 <DocumentFragment>
   <li
     class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
-    data-testid="todo-item"
   >
     My Todo
     <span

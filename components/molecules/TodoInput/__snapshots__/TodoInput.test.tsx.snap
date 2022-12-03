@@ -12,8 +12,7 @@ exports[`TodoInput fires onSubmit & empties input value when enabled button is c
         class="ml-1"
       >
         <label
-          class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
-          data-testid="todo-input-label"
+          class="text-xl font-semibold cursor-pointer select-none text-primary-dark"
           for="todo-input"
         >
           Todo Title
@@ -49,8 +48,7 @@ exports[`TodoInput renders default state with correct label, without any value a
         class="ml-1"
       >
         <label
-          class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
-          data-testid="todo-input-label"
+          class="text-xl font-semibold cursor-pointer select-none text-primary-dark"
           for="todo-input"
         >
           Todo Title
@@ -86,8 +84,7 @@ exports[`TodoInput renders input field that can be type into resulting in enable
         class="ml-1"
       >
         <label
-          class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
-          data-testid="todo-input-label"
+          class="text-xl font-semibold cursor-pointer select-none text-primary-dark"
           for="todo-input"
         >
           Todo Title

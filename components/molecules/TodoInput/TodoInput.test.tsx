@@ -1,7 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
 
-import { TEST_ID } from 'constants/testIds'
-
 import TodoInput from './TodoInput'
 import {
     TODO_INPUT_BUTTON_TEXT,
@@ -11,12 +9,11 @@ import {
 
 describe('TodoInput', () => {
     it('renders default state with correct label, without any value and with correct placeholder in input and submit button disabled', () => {
-        const { getByTestId, getByRole, asFragment } = render(
+        const { getByText, getByRole, asFragment } = render(
             <TodoInput onSubmit={jest.fn} />
         )
-        const label = getByTestId(TEST_ID.todoInputLabel)
+        const label = getByText(TODO_INPUT_LABEL)
         expect(label).toBeInTheDocument()
-        expect(label.textContent).toBe(TODO_INPUT_LABEL)
         const input = getByRole('textbox')
         expect(input).toBeInTheDocument()
         expect(input).toHaveAttribute('placeholder', TODO_INPUT_PLACEHOLDER)

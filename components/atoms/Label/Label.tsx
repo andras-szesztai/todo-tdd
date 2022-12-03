@@ -1,10 +1,9 @@
 import { Props } from './types'
 
-function Label({ label, testId, htmlFor }: Props) {
+function Label({ label, htmlFor }: Props) {
     return (
         <label
-            data-testid={testId}
-            className="font-semibold text-xl text-primary-dark cursor-pointer select-none"
+            className="text-xl font-semibold cursor-pointer select-none text-primary-dark"
             htmlFor={htmlFor}
         >
             {label}

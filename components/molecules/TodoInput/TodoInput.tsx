@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { Button } from 'components/atoms/Button'
 import { Input } from 'components/atoms/Input'
 import { Label } from 'components/atoms/Label'
-import { TEST_ID } from 'constants/testIds'
 
 import {
     TODO_INPUT_BUTTON_TEXT,
@@ -21,11 +20,7 @@ function TodoInput({ onSubmit }: Props) {
         <div className="flex items-end gap-2">
             <div className="flex flex-col gap-2">
                 <div className="ml-1">
-                    <Label
-                        label={TODO_INPUT_LABEL}
-                        testId={TEST_ID.todoInputLabel}
-                        htmlFor={TODO_INPUT_ID}
-                    />
+                    <Label label={TODO_INPUT_LABEL} htmlFor={TODO_INPUT_ID} />
                 </div>
                 <Input
                     onChange={(value) => {

@@ -2,7 +2,7 @@
 
 exports[`TodosView displays submitted todos in todos list, todos with same name can be submitted 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="flex flex-col gap-4 font-medium -translate-y-12 text-primary-dark"
     data-testid="todos-view-container"
   >
@@ -16,8 +16,7 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
           class="ml-1"
         >
           <label
-            class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
-            data-testid="todo-input-label"
+            class="text-xl font-semibold cursor-pointer select-none text-primary-dark"
             for="todo-input"
           >
             Todo Title
@@ -39,16 +38,15 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       </button>
     </div>
     <ul
-      class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
-      data-testid="todo-list-container"
+      class="flex flex-col gap-2 p-2 pr-4 overflow-y-auto border h-96 w-80 border-primary-dark rounded-xl bg-primary-dark-disabled"
     />
-  </div>
+  </section>
 </DocumentFragment>
 `;
 
 exports[`TodosView displays submitted todos in todos list, todos with same name can be submitted 2`] = `
 <DocumentFragment>
-  <div
+  <section
     class="flex flex-col gap-4 font-medium -translate-y-12 text-primary-dark"
     data-testid="todos-view-container"
   >
@@ -62,8 +60,7 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
           class="ml-1"
         >
           <label
-            class="font-semibold text-xl text-primary-dark cursor-pointer select-none"
-            data-testid="todo-input-label"
+            class="text-xl font-semibold cursor-pointer select-none text-primary-dark"
             for="todo-input"
           >
             Todo Title
@@ -85,12 +82,10 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       </button>
     </div>
     <ul
-      class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
-      data-testid="todo-list-container"
+      class="flex flex-col gap-2 p-2 pr-4 overflow-y-auto border h-96 w-80 border-primary-dark rounded-xl bg-primary-dark-disabled"
     >
       <li
         class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
-        data-testid="todo-item"
       >
         My first todo
         <span
@@ -106,7 +101,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       </li>
       <li
         class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
-        data-testid="todo-item"
       >
         My second todo
         <span
@@ -122,7 +116,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       </li>
       <li
         class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
-        data-testid="todo-item"
       >
         My first todo
         <span
@@ -137,6 +130,6 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
         </span>
       </li>
     </ul>
-  </div>
+  </section>
 </DocumentFragment>
 `;

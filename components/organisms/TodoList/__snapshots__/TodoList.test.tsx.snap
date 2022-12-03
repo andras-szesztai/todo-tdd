@@ -3,12 +3,10 @@
 exports[`TodoList displays submitted todos in the ui as list items ordered by date created ascending 1`] = `
 <DocumentFragment>
   <ul
-    class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
-    data-testid="todo-list-container"
+    class="flex flex-col gap-2 p-2 pr-4 overflow-y-auto border h-96 w-80 border-primary-dark rounded-xl bg-primary-dark-disabled"
   >
     <li
       class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
-      data-testid="todo-item"
     >
       My Todo 1
       <span
@@ -24,7 +22,6 @@ exports[`TodoList displays submitted todos in the ui as list items ordered by da
     </li>
     <li
       class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
-      data-testid="todo-item"
     >
       My Todo 2
       <span
@@ -45,8 +42,7 @@ exports[`TodoList displays submitted todos in the ui as list items ordered by da
 exports[`TodoList renders without error 1`] = `
 <DocumentFragment>
   <ul
-    class="h-96 w-80 border border-primary-dark rounded-xl p-2 pr-4 overflow-y-auto bg-primary-dark-disabled flex flex-col gap-2"
-    data-testid="todo-list-container"
+    class="flex flex-col gap-2 p-2 pr-4 overflow-y-auto border h-96 w-80 border-primary-dark rounded-xl bg-primary-dark-disabled"
   />
 </DocumentFragment>
 `;

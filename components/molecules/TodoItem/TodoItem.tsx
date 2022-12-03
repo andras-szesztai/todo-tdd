@@ -2,7 +2,6 @@ import { useState } from 'react'
 import classNames from 'classnames'
 
 import { Button } from 'components/atoms/Button'
-import { TEST_ID } from 'constants/testIds'
 
 import { TODO_COMPLETE_BUTTON_TEXT } from './constants'
 import { Props } from './types'
@@ -22,7 +21,7 @@ function TodoItem({ title, onCompleteClick, isCompleted }: Props) {
         { 'opacity-100': isFocused }
     )
     return (
-        <li data-testid={TEST_ID.todoItem} className={liStyles}>
+        <li className={liStyles}>
             {title}
             <span className={spanStyles}>
                 <Button

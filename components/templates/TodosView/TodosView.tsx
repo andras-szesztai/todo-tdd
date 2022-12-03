@@ -20,7 +20,7 @@ function TodosView({ initialTodoItems = [] }: Props) {
     }
 
     return (
-        <div
+        <section
             data-testid={TEST_ID.todoViewContainer}
             className="flex flex-col gap-4 font-medium -translate-y-12 text-primary-dark"
         >
@@ -41,7 +41,7 @@ function TodosView({ initialTodoItems = [] }: Props) {
                 todoItems={todos}
                 onTodoItemCompleteClick={handleTodoItemCompleteClick}
             />
-        </div>
+        </section>
     )
 }
 

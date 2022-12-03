@@ -11,11 +11,11 @@ describe('TodosView', () => {
     })
 
     it('displays submitted todos in todos list, todos with same name can be submitted', () => {
-        const { getByRole, queryByTestId, getAllByTestId, asFragment } = render(
+        const { getAllByRole, getByRole, queryByRole, asFragment } = render(
             <TodosView />
         )
         expect(asFragment()).toMatchSnapshot()
-        expect(queryByTestId(TEST_ID.todoItem)).not.toBeInTheDocument()
+        expect(queryByRole('listitem')).not.toBeInTheDocument()
         const input = getByRole('textbox')
         const firstItem = 'My first todo'
         fireEvent.change(input, {
@@ -23,7 +23,7 @@ describe('TodosView', () => {
         })
         const todoSubmitButton = getByRole('button', { name: /submit/i })
         fireEvent.click(todoSubmitButton)
-        let todoItems = getAllByTestId(TEST_ID.todoItem)
+        let todoItems = getAllByRole('listitem')
         expect(todoItems).toHaveLength(1)
         expect(todoItems[0]).toHaveTextContent(firstItem)
         const secondItem = 'My second todo'
@@ -31,7 +31,7 @@ describe('TodosView', () => {
             target: { value: secondItem },
         })
         fireEvent.click(todoSubmitButton)
-        todoItems = getAllByTestId(TEST_ID.todoItem)
+        todoItems = getAllByRole('listitem')
         expect(todoItems).toHaveLength(2)
         expect(todoItems[0]).toHaveTextContent(firstItem)
         expect(todoItems[1]).toHaveTextContent(secondItem)
@@ -39,7 +39,7 @@ describe('TodosView', () => {
             target: { value: firstItem },
         })
         fireEvent.click(todoSubmitButton)
-        todoItems = getAllByTestId(TEST_ID.todoItem)
+        todoItems = getAllByRole('listitem')
         expect(todoItems).toHaveLength(3)
         expect(todoItems[0]).toHaveTextContent(firstItem)
         expect(todoItems[1]).toHaveTextContent(secondItem)
@@ -62,16 +62,22 @@ describe('TodosView', () => {
                 isCompleted: false,
             },
         ]
-        const { getAllByTestId } = render(
+        const { getAllByRole } = render(
             <TodosView initialTodoItems={testTodoItems} />
         )
-        const todos = getAllByTestId(TEST_ID.todoItem)
-        const firstTodoCompleteButton = within(todos[0]).getByRole('button', {
-            name: /complete/i,
-        })
-        const secondTodoCompleteButton = within(todos[1]).getByRole('button', {
-            name: /complete/i,
-        })
+        const todoItems = getAllByRole('listitem')
+        const firstTodoCompleteButton = within(todoItems[0]).getByRole(
+            'button',
+            {
+                name: /complete/i,
+            }
+        )
+        const secondTodoCompleteButton = within(todoItems[1]).getByRole(
+            'button',
+            {
+                name: /complete/i,
+            }
+        )
         expect(firstTodoCompleteButton).toHaveTextContent(
             TODO_COMPLETE_BUTTON_TEXT.complete
         )

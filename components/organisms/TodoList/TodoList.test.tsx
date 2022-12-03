@@ -1,14 +1,13 @@
 import { fireEvent, render, within } from '@testing-library/react'
-import { TEST_ID } from 'constants/testIds'
 
 import TodoList from './TodoList'
 
 describe('TodoList', () => {
     it('renders without error', () => {
-        const { getByTestId, asFragment } = render(
+        const { getByRole, asFragment } = render(
             <TodoList todoItems={[]} onTodoItemCompleteClick={jest.fn} />
         )
-        const todoListContainer = getByTestId(TEST_ID.todoListContainer)
+        const todoListContainer = getByRole('list')
         expect(todoListContainer).toBeInTheDocument()
         expect(asFragment()).toMatchSnapshot()
     })
@@ -28,13 +27,13 @@ describe('TodoList', () => {
                 isCompleted: false,
             },
         ]
-        const { getAllByTestId, asFragment } = render(
+        const { getAllByRole, asFragment } = render(
             <TodoList
                 todoItems={testTodoItems}
                 onTodoItemCompleteClick={jest.fn}
             />
         )
-        const todoItems = getAllByTestId(TEST_ID.todoItem)
+        const todoItems = getAllByRole('listitem')
         expect(todoItems).toHaveLength(testTodoItems.length)
         expect(todoItems[0]).toHaveTextContent(testTodoItems[1].title)
         expect(todoItems[1]).toHaveTextContent(testTodoItems[0].title)
@@ -57,17 +56,17 @@ describe('TodoList', () => {
             },
         ]
         const mockOnTodoItemCompleteClick = jest.fn()
-        const { getAllByTestId } = render(
+        const { getAllByRole } = render(
             <TodoList
                 todoItems={testTodoItems}
                 onTodoItemCompleteClick={mockOnTodoItemCompleteClick}
             />
         )
-        const todoItem = getAllByTestId(TEST_ID.todoItem)
+        const todoItems = getAllByRole('listitem')
         const selectedIndex = 0
         expect(mockOnTodoItemCompleteClick).not.toHaveBeenCalled()
         fireEvent.click(
-            within(todoItem[selectedIndex]).getByRole('button', {
+            within(todoItems[selectedIndex]).getByRole('button', {
                 name: /complete/i,
             })
         )
