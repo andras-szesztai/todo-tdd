@@ -4,4 +4,6 @@ export interface Props {
     onClick: () => void
     disabled?: boolean
     size?: 'small' | 'medium'
+    onFocus?: () => void
+    onBlur?: () => void
 }

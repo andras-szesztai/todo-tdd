@@ -93,12 +93,12 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
       data-testid="todo-list-container"
     >
       <li
-        class="relative border border-primary-dark rounded-lg p-2  truncate group bg-white border-primary-dark text-primary-dark"
+        class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
         data-testid="todo-item"
       >
         My first todo
         <span
-          class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+          class="absolute transition-opacity -translate-y-1/2 opacity-0 right-2 top-1/2 group-hover:opacity-100"
         >
           <button
             class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
@@ -110,12 +110,12 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
         </span>
       </li>
       <li
-        class="relative border border-primary-dark rounded-lg p-2  truncate group bg-white border-primary-dark text-primary-dark"
+        class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
         data-testid="todo-item"
       >
         My second todo
         <span
-          class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+          class="absolute transition-opacity -translate-y-1/2 opacity-0 right-2 top-1/2 group-hover:opacity-100"
         >
           <button
             class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"
@@ -127,12 +127,12 @@ exports[`TodosView displays submitted todos in todos list, todos with same name 
         </span>
       </li>
       <li
-        class="relative border border-primary-dark rounded-lg p-2  truncate group bg-white border-primary-dark text-primary-dark"
+        class="relative border border-primary-dark rounded-lg p-2 truncate group bg-white border-primary-dark text-primary-dark"
         data-testid="todo-item"
       >
         My first todo
         <span
-          class="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity"
+          class="absolute transition-opacity -translate-y-1/2 opacity-0 right-2 top-1/2 group-hover:opacity-100"
         >
           <button
             class="inline text-white font-medium bg-primary-dark border cursor-pointer select-none border-primary-dark disabled:bg-primary-dark-disabled disabled:cursor-not-allowed focus:outline-none focus:border-accent text-xs py-1 px-1.5 rounded-md"

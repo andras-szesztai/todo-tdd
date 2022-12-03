@@ -22,7 +22,7 @@ function TodosView({ initialTodoItems = [] }: Props) {
     return (
         <div
             data-testid={TEST_ID.todoViewContainer}
-            className="flex flex-col gap-4 -translate-y-12 text-primary-dark font-medium"
+            className="flex flex-col gap-4 font-medium -translate-y-12 text-primary-dark"
         >
             <TodoInput
                 onSubmit={(newTodo) => {
